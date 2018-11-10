@@ -4,6 +4,7 @@ class Dropdown extends Component {
     constructor(props) {
         super(props);
         this.state = {value: ''}
+        this.label = props.label;
     
         this.handleChange = this.handleChange.bind(this);
     }
@@ -15,7 +16,7 @@ class Dropdown extends Component {
     render () {
         return (
             <label className="dropdown-label">
-                <span className="label">Dropdown:</span>
+                <span className="label">{this.label}</span>
                 <select value={this.state.value} 
                     onChange={this.handleChange}>
                     <option value="Option1">Option 1</option>

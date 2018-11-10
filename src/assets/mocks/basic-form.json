@@ -1,0 +1,58 @@
+[
+    {
+        "id": "DropdownTest",
+        "type": "Dropdown",
+        "label": "Title:",
+        "value": "",
+        "options": [
+            {
+                "key": "1",
+                "value": "Option 1"
+            },
+            {
+                "key": "2",
+                "value": "Option 2"
+            },
+            {
+                "key": "3",
+                "value": "Option 3"
+            }
+        ]
+    },
+    {
+        "id": "TextboxTest1",
+        "type": "Textbox",
+        "label": "First name:",
+        "value": ""
+    },
+    {
+        "id": "TextboxTest2",
+        "type": "Textbox",
+        "label": "Surname:",
+        "value": ""
+    },
+    {
+        "id": "CheckboxListTest",
+        "type": "CheckboxList",
+        "label": "List of checkboxes",
+        "value": "",
+        "options": [
+            { "key": "1", "text": "Option1" },
+            { "key": "2", "text": "Option2" },
+            { "key": "3", "text": "Option3" },
+            { "key": "4", "text": "Option4" }
+        ]
+    },
+    {
+        "id": "RadioListTest",
+        "type": "RadioList",
+        "label": "List of radios",
+        "value": "",
+        "options": [
+            { "key": "1", "text": "Option1" },
+            { "key": "2", "text": "Option2" },
+            { "key": "3", "text": "Option3" },
+            { "key": "4", "text": "Option4" }
+        ]
+    }
+]

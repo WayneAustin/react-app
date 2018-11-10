@@ -5,24 +5,18 @@ class CheckboxList extends Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
-        
+        this.items = props.items;
     }
 
-    options = [
-        { key: '1', text: 'Option1' },
-        { key: '2', text: 'Option2' },
-        { key: '3', text: 'Option3' },
-        { key: '4', text: 'Option4' }
-    ]
-
-
-    render () {
+    render() {
         return (
-            <div>
-                {this.options.map((option) => 
-                <Checkbox key={option.key} text={option.text}></Checkbox>
+            <ul className="checkbox-list">
+                {this.items.map((item) =>
+                    <li> 
+                        <Checkbox key={item.key} text={item.text}></Checkbox>
+                    </li>
                 )}
-            </div>
+            </ul>
         )
     }
 }

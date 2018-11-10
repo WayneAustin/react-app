@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 
-class Checkbox extends Component {
+class Radio extends Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
-        this.label = props.text || '';
-        this.key = props.key || '';
 
         this.handleChange = this.handleChange.bind(this);
     }
@@ -16,10 +14,11 @@ class Checkbox extends Component {
 
     render() {
         return (
-            <label className="checkbox-label">
-                <span>{this.label}:</span>
-                <input type="checkbox"
-                    key={this.key} 
+            <label>
+                <span className="label">{this.props.label}</span>
+                <input type="radio"
+                    name={this.props.group}
+                    key={this.props.key} 
                     value={this.state.value}
                 />
             </label>
@@ -27,4 +26,4 @@ class Checkbox extends Component {
     }
 }
 
-export default Checkbox;
+export default Radio;

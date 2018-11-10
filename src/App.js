@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Textbox, Dropdown, Checkbox, CheckboxList } from './components/forms/_all.js';
+import Form from './components/containers/form';
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,10 +21,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <Textbox></Textbox>
-        <Dropdown></Dropdown>
-        <Checkbox></Checkbox>
-        <CheckboxList></CheckboxList>
+        <Form></Form>
         <p>hello</p>
       </div>
     );
