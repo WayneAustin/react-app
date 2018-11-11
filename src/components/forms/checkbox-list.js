@@ -4,16 +4,25 @@ import Checkbox from './checkbox';
 class CheckboxList extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
-        this.items = props.items;
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(id, value) {
+        this.props.onInputChange(id, value, this);
     }
 
     render() {
         return (
             <ul className="checkbox-list">
-                {this.items.map((item) =>
+                {this.props.items.map((item) =>
                     <li> 
-                        <Checkbox key={item.key} text={item.text}></Checkbox>
+                        <Checkbox key={item.key} 
+                            id={item.id} 
+                            label={item.text}
+                            value={item.value}
+                            isSelected={item.isSelected}
+                            onCheckboxChange={this.handleChange}>
+                        </Checkbox>
                     </li>
                 )}
             </ul>

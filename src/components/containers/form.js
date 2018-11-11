@@ -19,13 +19,22 @@ class Form extends Component {
 
     updateForm (id, value, parent) {
         // #TODO: refactor this
-        if (parent) {
-            // if parent then its a list (RadioList or CheckList)
+        if (parent.props.type === 'RadioList') {
+            // if parent then its a list RadioList
             let pIndex = this.state.form.findIndex(input => input.id === parent.props.id);
             this.setState((previousState) => {
                 previousState.form[pIndex].items.forEach(item => {
                     item.isSelected = item.id === id;
                 });
+                return previousState;
+            });
+        }
+        else if (parent.props.type === 'CheckboxList') {
+            // if parent then its a list CheckList
+            let pIndex = this.state.form.findIndex(input => input.id === parent.props.id);
+            let cIndex = this.state.form[pIndex].items.findIndex(input => input.id === id);
+            this.setState((previousState) => {
+                previousState.form[pIndex].items[cIndex].isSelected = value;
                 return previousState;
             });
         } else {
@@ -44,6 +53,7 @@ class Form extends Component {
                 {this.state.form.map(comp => {
                     let Input = this.inputs[comp.type];
                     return <Input id={comp.id} 
+                        type={comp.type}
                         key={comp.id} 
                         value={comp.value} 
                         label={comp.label} 

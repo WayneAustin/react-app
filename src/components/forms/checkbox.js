@@ -7,7 +7,7 @@ class Checkbox extends Component {
     }
 
     handleChange(e) {
-        this.props.onInputChange(this.props.id, e.target.value);
+        this.props.onCheckboxChange(this.props.id, e.target.checked);
     }
 
     render() {
@@ -15,8 +15,11 @@ class Checkbox extends Component {
             <label className="checkbox-label">
                 <span>{this.props.text}:</span>
                 <input type="checkbox"
-                    key={this.key} 
-                    value={this.props.value}
+                    name={this.props.group}
+                    id={this.props.id} 
+                    value={this.props.id}
+                    checked={this.props.isSelected}
+                    onChange={this.handleChange}
                 />
             </label>
         )
