@@ -41,18 +41,18 @@
         "id": "DatePickerTest",
         "type": "DatePicker",
         "label": "Date of birth:",
-        "value": "8/6/1985"
+        "value": "1985-06-08"
     },
     {
         "id": "CheckboxListTest",
         "type": "CheckboxList",
         "label": "List of checkboxes",
         "value": "",
-        "options": [
-            { "key": "1", "text": "Option1" },
-            { "key": "2", "text": "Option2" },
-            { "key": "3", "text": "Option3" },
-            { "key": "4", "text": "Option4" }
+        "items": [
+            { "id": "1", "text": "Option1", "isSelected": true },
+            { "id": "2", "text": "Option2" },
+            { "id": "3", "text": "Option3" },
+            { "id": "4", "text": "Option4" }
         ]
     },
     {
@@ -60,11 +60,11 @@
         "type": "RadioList",
         "label": "List of radios",
         "value": "",
-        "options": [
-            { "key": "1", "text": "Option1" },
-            { "key": "2", "text": "Option2" },
-            { "key": "3", "text": "Option3" },
-            { "key": "4", "text": "Option4" }
+        "items": [
+            { "id": "1", "text": "Option1" },
+            { "id": "2", "text": "Option2" },
+            { "id": "3", "text": "Option3" },
+            { "id": "4", "text": "Option4" }
         ]
     },{
         "id": "TextareaTest",

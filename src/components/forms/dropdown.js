@@ -3,21 +3,18 @@ import React, {Component} from 'react'
 class Dropdown extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''}
-        this.label = props.label;
-    
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
+    handleChange(e) {
+        this.props.onInputChange(this.props.id, e.target.value);
     }
 
     render () {
         return (
             <label className="dropdown-label">
-                <span className="label">{this.label}</span>
-                <select value={this.state.value} 
+                <span className="label">{this.props.label}</span>
+                <select value={this.props.value} 
                     onChange={this.handleChange}>
                     <option value="Option1">Option 1</option>
                     <option value="Option2">Option 2</option>

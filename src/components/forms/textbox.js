@@ -3,12 +3,11 @@ import React, {Component} from 'react'
 class Textbox extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: props.value || ''};
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
+    handleChange(e) {
+        this.props.onInputChange(this.props.id, e.target.value);
     }
 
     render () {
@@ -16,7 +15,7 @@ class Textbox extends Component {
             <label className="textbox-label">
                 <span className="label">{this.props.label}</span>
                 <input type="text" 
-                    value={this.state.value} 
+                    value={this.props.value} 
                     onChange={this.handleChange} 
                 />
             </label>

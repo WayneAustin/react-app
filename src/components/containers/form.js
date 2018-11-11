@@ -6,7 +6,7 @@ class Form extends Component {
     constructor (props) {
         super(props);
         this.inputs = FormComponents.components;
-        this.state = {value: ''};
+        this.state = {form: MockForm};
 
         this.updateForm = this.updateForm.bind(this);
     }
@@ -15,28 +15,57 @@ class Form extends Component {
         console.log('parent');
     }
 
-    components = MockForm;
-
     output = {};
 
-    updateForm (value) {
-        console.log(value);
-        console.log(this);
+    updateForm (id, value, parent) {
+        // #TODO: refactor this
+        if (parent) {
+            // if parent then its a list (RadioList or CheckList)
+            let pIndex = this.state.form.findIndex(input => input.id === parent.props.id);
+            this.setState((previousState) => {
+                previousState.form[pIndex].items.forEach(item => {
+                    item.isSelected = item.id === id;
+                });;
+                return previousState;
+            });
+        } else {
+            // if setting state of component directly
+            let index = this.state.form.findIndex(input => input.id === id);
+            this.setState((previousState) => {
+                previousState.form[index].value = value;
+                return previousState;
+            });
+        }
     }
 
     render () {
         return (
             <form>
-                {this.components.map(comp => {
+                {this.state.form.map(comp => {
                     let Input = this.inputs[comp.type];
                     return <Input id={comp.id} 
+                        key={comp.id} 
                         value={comp.value} 
                         label={comp.label} 
-                        items={comp.options}
-                        onChange={this.updateForm}></Input>
+                        items={comp.items}
+                        onInputChange={this.updateForm}></Input>
                 })}
 
-                <p>{this.updateForm}</p>
+                <ul className="results-list">
+                    {this.state.form.map(comp => {
+                        if (comp.items) {
+                            return <li><strong>{comp.id}</strong>: {comp.value}
+                                {comp.items.map(item => {
+                                return <ul>
+                                    <li>{item.text}: {item.isSelected ? item.isSelected.toString() : false}</li>
+                                </ul>
+                                })}
+                            </li>
+                        } else {
+                            return <li><strong>{comp.id}</strong>: {comp.value}</li>
+                        }
+                    })}
+                </ul>
             </form>
         )
     }

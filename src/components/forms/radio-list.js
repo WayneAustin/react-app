@@ -4,7 +4,11 @@ import Radio from './radio';
 class RadioList extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(id) {
+        this.props.onInputChange(id, null, this);
     }
 
     render () {
@@ -12,8 +16,14 @@ class RadioList extends Component {
             <ul className="radio-list">
                 {this.props.items.map((item) => 
                 <li>
-                    <Radio group={this.props.id} key={item.key} label={item.text}></Radio>
-                    </li>
+                    <Radio group={this.props.id} 
+                        id={item.id} 
+                        label={item.text}
+                        value={item.value}
+                        selectedItem={item.isSelected}
+                        onRadioChange={this.handleChange}>
+                    </Radio>
+                </li>
                 )}
             </ul>
         )
