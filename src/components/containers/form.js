@@ -19,7 +19,7 @@ class Form extends Component {
 
     updateForm (id, value, parent) {
         // #TODO: refactor this
-        if (parent.props.type === 'RadioList') {
+        if (parent && parent.props.type === 'RadioList') {
             // if parent then its a list RadioList
             let pIndex = this.state.form.findIndex(input => input.id === parent.props.id);
             this.setState((previousState) => {
@@ -29,7 +29,7 @@ class Form extends Component {
                 return previousState;
             });
         }
-        else if (parent.props.type === 'CheckboxList') {
+        else if (parent && parent.props.type === 'CheckboxList') {
             // if parent then its a list CheckList
             let pIndex = this.state.form.findIndex(input => input.id === parent.props.id);
             let cIndex = this.state.form[pIndex].items.findIndex(input => input.id === id);
