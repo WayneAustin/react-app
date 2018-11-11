@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 
-class Textbox extends Component {
+class Textarea extends Component {
     constructor(props) {
         super(props);
         this.state = {value: props.value || ''};
+    
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -13,15 +14,14 @@ class Textbox extends Component {
 
     render () {
         return (
-            <label className="textbox-label">
+            <label className="textarea-label">
                 <span className="label">{this.props.label}</span>
-                <input type="text" 
-                    value={this.state.value} 
-                    onChange={this.handleChange} 
-                />
+                <textarea onChange={this.handleChange}>
+                    {this.state.value}
+                </textarea>
             </label>
         )
     }
 }
 
-export default Textbox;
+export default Textarea;

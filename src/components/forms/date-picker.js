@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 
-class Textbox extends Component {
+class DatePicker extends Component {
     constructor(props) {
         super(props);
         this.state = {value: props.value || ''};
+    
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -13,9 +14,9 @@ class Textbox extends Component {
 
     render () {
         return (
-            <label className="textbox-label">
+            <label className="datepicker-label">
                 <span className="label">{this.props.label}</span>
-                <input type="text" 
+                <input type="date" 
                     value={this.state.value} 
                     onChange={this.handleChange} 
                 />
@@ -24,4 +25,4 @@ class Textbox extends Component {
     }
 }
 
-export default Textbox;
+export default DatePicker;

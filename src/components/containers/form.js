@@ -7,6 +7,8 @@ class Form extends Component {
         super(props);
         this.inputs = FormComponents.components;
         this.state = {value: ''};
+
+        this.updateForm = this.updateForm.bind(this);
     }
 
     handleClick () {
@@ -14,6 +16,13 @@ class Form extends Component {
     }
 
     components = MockForm;
+
+    output = {};
+
+    updateForm (value) {
+        console.log(value);
+        console.log(this);
+    }
 
     render () {
         return (
@@ -23,8 +32,11 @@ class Form extends Component {
                     return <Input id={comp.id} 
                         value={comp.value} 
                         label={comp.label} 
-                        items={comp.options}></Input>
+                        items={comp.options}
+                        onChange={this.updateForm}></Input>
                 })}
+
+                <p>{this.updateForm}</p>
             </form>
         )
     }

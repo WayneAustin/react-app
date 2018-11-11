@@ -32,6 +32,18 @@
         "value": ""
     },
     {
+        "id": "NumberTest",
+        "type": "Number",
+        "label": "Age:",
+        "value": ""
+    },
+    {
+        "id": "DatePickerTest",
+        "type": "DatePicker",
+        "label": "Date of birth:",
+        "value": "8/6/1985"
+    },
+    {
         "id": "CheckboxListTest",
         "type": "CheckboxList",
         "label": "List of checkboxes",
@@ -54,5 +66,10 @@
             { "key": "3", "text": "Option3" },
             { "key": "4", "text": "Option4" }
         ]
+    },{
+        "id": "TextareaTest",
+        "type": "Textarea",
+        "label": "Textarea test:",
+        "value": "This is testing the textarea component to make sure it works properly."
     }
 ]
