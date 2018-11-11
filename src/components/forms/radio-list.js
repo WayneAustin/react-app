@@ -20,7 +20,7 @@ class RadioList extends Component {
                         id={item.id} 
                         label={item.text}
                         value={item.value}
-                        selectedItem={item.isSelected}
+                        isSelected={item.isSelected}
                         onRadioChange={this.handleChange}>
                     </Radio>
                 </li>

@@ -61,7 +61,7 @@
         "label": "List of radios",
         "value": "",
         "items": [
-            { "id": "1", "text": "Option1" },
+            { "id": "1", "text": "Option1", "isSelected": true },
             { "id": "2", "text": "Option2" },
             { "id": "3", "text": "Option3" },
             { "id": "4", "text": "Option4" }

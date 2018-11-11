@@ -25,7 +25,7 @@ class Form extends Component {
             this.setState((previousState) => {
                 previousState.form[pIndex].items.forEach(item => {
                     item.isSelected = item.id === id;
-                });;
+                });
                 return previousState;
             });
         } else {
