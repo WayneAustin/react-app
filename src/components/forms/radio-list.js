@@ -15,7 +15,7 @@ class RadioList extends Component {
         return (
             <ul className="radio-list">
                 {this.props.items.map((item) => 
-                <li>
+                <li key={item.id}>
                     <Radio group={this.props.id} 
                         id={item.id} 
                         label={item.text}

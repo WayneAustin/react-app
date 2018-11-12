@@ -18,7 +18,7 @@ class Form extends Component {
     output = {};
 
     updateForm (id, value, parent) {
-        // #TODO: refactor this
+        // #TODO: refactor this in to external processor
         if (parent && parent.props.type === 'RadioList') {
             // if parent then its a list RadioList
             let pIndex = this.state.form.findIndex(input => input.id === parent.props.id);
@@ -50,7 +50,7 @@ class Form extends Component {
     render () {
         return (
             <form>
-                {this.state.form.map(comp => {
+                {this.state.form.fields.map(comp => {
                     let Input = this.inputs[comp.type];
                     return <Input id={comp.id} 
                         type={comp.type}
@@ -58,21 +58,22 @@ class Form extends Component {
                         value={comp.value} 
                         label={comp.label} 
                         items={comp.items}
+                        url={comp.url}
                         onInputChange={this.updateForm}></Input>
                 })}
 
                 <ul className="results-list">
-                    {this.state.form.map(comp => {
+                    {this.state.form.fields.map(comp => {
                         if (comp.items) {
-                            return <li><strong>{comp.id}</strong>: {comp.value}
+                            return <li key={comp.id}><strong>{comp.id}</strong>: {comp.value}
                                 {comp.items.map(item => {
                                 return <ul>
-                                    <li>{item.text}: {item.isSelected ? item.isSelected.toString() : false}</li>
+                                    <li key={item.id}>{item.text}: {item.isSelected ? item.isSelected.toString() : false}</li>
                                 </ul>
                                 })}
                             </li>
                         } else {
-                            return <li><strong>{comp.id}</strong>: {comp.value}</li>
+                            return <li key={comp.id}><strong>{comp.id}</strong>: {comp.value}</li>
                         }
                     })}
                 </ul>

@@ -13,7 +13,7 @@ class Checkbox extends Component {
     render() {
         return (
             <label className="checkbox-label">
-                <span>{this.props.text}:</span>
+                <span>{this.props.label}:</span>
                 <input type="checkbox"
                     name={this.props.group}
                     id={this.props.id} 

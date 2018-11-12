@@ -1,75 +1,91 @@
-[
-    {
-        "id": "DropdownTest",
-        "type": "Dropdown",
-        "label": "Title:",
-        "value": "",
-        "options": [
-            {
-                "key": "1",
-                "value": "Option 1"
-            },
-            {
-                "key": "2",
-                "value": "Option 2"
-            },
-            {
-                "key": "3",
-                "value": "Option 3"
+{
+    "id": "MockForm",
+    "fields": [
+        {
+            "id": "DropdownTest",
+            "type": "Dropdown",
+            "label": "Title:",
+            "value": "",
+            "options": [
+                {
+                    "key": "1",
+                    "value": "Option 1"
+                },
+                {
+                    "key": "2",
+                    "value": "Option 2"
+                },
+                {
+                    "key": "3",
+                    "value": "Option 3"
+                }
+            ],
+            "validation": {
+                "isRequired": false
             }
-        ]
-    },
-    {
-        "id": "TextboxTest1",
-        "type": "Textbox",
-        "label": "First name:",
-        "value": ""
-    },
-    {
-        "id": "TextboxTest2",
-        "type": "Textbox",
-        "label": "Surname:",
-        "value": ""
-    },
-    {
-        "id": "NumberTest",
-        "type": "Number",
-        "label": "Age:",
-        "value": ""
-    },
-    {
-        "id": "DatePickerTest",
-        "type": "DatePicker",
-        "label": "Date of birth:",
-        "value": "1985-06-08"
-    },
-    {
-        "id": "CheckboxListTest",
-        "type": "CheckboxList",
-        "label": "List of checkboxes",
-        "value": "",
-        "items": [
-            { "id": "1", "text": "Option1", "isSelected": true },
-            { "id": "2", "text": "Option2" },
-            { "id": "3", "text": "Option3" },
-            { "id": "4", "text": "Option4" }
-        ]
-    },
-    {
-        "id": "RadioListTest",
-        "type": "RadioList",
-        "label": "List of radios",
-        "value": "",
-        "items": [
-            { "id": "1", "text": "Option1", "isSelected": true },
-            { "id": "2", "text": "Option2" },
-            { "id": "3", "text": "Option3" },
-            { "id": "4", "text": "Option4" }
-        ]
-    },{
-        "id": "TextareaTest",
-        "type": "Textarea",
-        "label": "Textarea test:",
-        "value": "This is testing the textarea component to make sure it works properly."
-    }
-]
+        },
+        {
+            "id": "TextboxTest1",
+            "type": "Textbox",
+            "label": "First name:",
+            "value": "",
+            "validation": {
+                "isRequired": false
+            }
+        },
+        {
+            "id": "TextboxTest2",
+            "type": "Textbox",
+            "label": "Surname:",
+            "value": ""
+        },
+        {
+            "id": "NumberTest",
+            "type": "Number",
+            "label": "Age:",
+            "value": ""
+        },
+        {
+            "id": "DatePickerTest",
+            "type": "DatePicker",
+            "label": "Date of birth:",
+            "value": "1985-06-08"
+        },
+        {
+            "id": "CheckboxListTest",
+            "type": "CheckboxList",
+            "label": "List of checkboxes",
+            "value": "",
+            "items": [
+                { "id": "1", "text": "Option1", "isSelected": true },
+                { "id": "2", "text": "Option2" },
+                { "id": "3", "text": "Option3" },
+                { "id": "4", "text": "Option4" }
+            ]
+        },
+        {
+            "id": "RadioListTest",
+            "type": "RadioList",
+            "label": "List of radios",
+            "value": "",
+            "items": [
+                { "id": "1", "text": "Option1", "isSelected": true },
+                { "id": "2", "text": "Option2" },
+                { "id": "3", "text": "Option3" },
+                { "id": "4", "text": "Option4" }
+            ]
+        },
+        {
+            "id": "TextareaTest",
+            "type": "Textarea",
+            "label": "Textarea test:",
+            "value": "This is testing the textarea component to make sure it works properly."
+        },
+        {
+            "id": "ButtonTest",
+            "type": "Button",
+            "label": "Submit",
+            "url": "#"
+        }
+    ]
+}

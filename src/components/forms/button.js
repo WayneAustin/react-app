@@ -3,21 +3,18 @@ import React, {Component} from 'react'
 class Button extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''}
-        this.text = props.text || 'Submit';
-    
-        this.handleClick = props.click;
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
-        console.log('clicked');
+    handleClick(e) {
+        this.props.onInputChange(e, this);
     }
 
     render () {
         return (
             <button type="button"
                 onClick={this.handleClick}>
-                {this.text}
+                {this.props.label}
             </button>
         )
     }

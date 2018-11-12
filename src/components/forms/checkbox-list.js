@@ -15,9 +15,8 @@ class CheckboxList extends Component {
         return (
             <ul className="checkbox-list">
                 {this.props.items.map((item) =>
-                    <li> 
-                        <Checkbox key={item.key} 
-                            id={item.id} 
+                    <li key={item.id}> 
+                        <Checkbox id={item.id} 
                             label={item.text}
                             value={item.value}
                             isSelected={item.isSelected}
