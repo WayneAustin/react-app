@@ -7,7 +7,7 @@ class Textarea extends Component {
     }
 
     handleChange(e) {
-        this.props.onInputChange(this.props.id, e.target.value);
+        this.props.onInputChange(this, e.target.value);
     }
 
     render () {

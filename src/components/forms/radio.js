@@ -7,7 +7,7 @@ class Radio extends Component {
     }
 
     handleChange() {
-        this.props.onRadioChange(this.props.id);
+        this.props.onRadioChange(this);
     }
 
     render() {

@@ -7,8 +7,8 @@ class RadioList extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(id) {
-        this.props.onInputChange(id, null, this);
+    handleChange(field) {
+        this.props.onInputChange(field, null, this);
     }
 
     render () {

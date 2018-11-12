@@ -7,8 +7,8 @@ class CheckboxList extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(id, value) {
-        this.props.onInputChange(id, value, this);
+    handleChange(field, value) {
+        this.props.onInputChange(field, value, this);
     }
 
     render() {
