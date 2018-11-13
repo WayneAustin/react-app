@@ -12,7 +12,7 @@ class Textbox extends Component {
 
     render () {
         return (
-            <label className="textbox-label">
+            <label className={`textbox-label ${this.props.className}`}>
                 <span className="label">{this.props.label}</span>
                 <input type="text" 
                     value={this.props.value} 
