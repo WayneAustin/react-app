@@ -53,6 +53,17 @@
             }
         },
         {
+            "id": "NumberTest2",
+            "type": "Number",
+            "label": "Age:",
+            "value": "",
+            "validation": {
+                "required": true,
+                "min": "{NumberTest}",
+                "max": 10
+            }
+        },
+        {
             "id": "DatePickerTest",
             "type": "DatePicker",
             "label": "Date of birth:",

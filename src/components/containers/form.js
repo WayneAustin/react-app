@@ -23,7 +23,7 @@ class Form extends Component {
         this.setState((state) => {
             state.edited = true;
             state = FormStateProcessor(this.state, field, value, parent);
-            state = FormValidationProcessor(this.state, field, value);
+            state = FormValidationProcessor(this.state, field, value, parent);
             return state;
         });
     }
