@@ -21,8 +21,8 @@ class Form extends Component {
     updateForm (field, value, parent) {
         // #TODO: refactor this in to external processor
         this.setState((state) => {
-            state = FormValidationProcessor(this.state, field, value);
             state = FormStateProcessor(this.state, field, value, parent);
+            state = FormValidationProcessor(this.state, field, value);
             return state;
         });
     }
@@ -39,6 +39,7 @@ class Form extends Component {
                         label={comp.label} 
                         items={comp.items}
                         url={comp.url}
+                        isValid={comp.isValid}
                         onInputChange={this.updateForm}></Input>
                 })}
 

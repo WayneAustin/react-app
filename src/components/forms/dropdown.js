@@ -11,8 +11,9 @@ class Dropdown extends Component {
     }
 
     render () {
+        const isValid = this.props.isValid ? 'valid' : 'invalid';
         return (
-            <label className="dropdown-label">
+            <label className={`dropdown-label ${isValid}`}>
                 <span className="label">{this.props.label}</span>
                 <select value={this.props.value} 
                     onChange={this.handleChange}>

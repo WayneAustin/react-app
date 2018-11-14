@@ -21,7 +21,7 @@
                 }
             ],
             "validation": {
-                "isRequired": false
+                "required": false
             }
         },
         {
@@ -30,7 +30,9 @@
             "label": "First name:",
             "value": "",
             "validation": {
-                "isRequired": false
+                "required": false,
+                "min": 3,
+                "max": 10
             }
         },
         {

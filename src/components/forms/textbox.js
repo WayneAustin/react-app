@@ -11,8 +11,9 @@ class Textbox extends Component {
     }
 
     render () {
+        const isValid = this.props.isValid ? 'valid' : 'invalid';
         return (
-            <label className={`textbox-label ${this.props.className}`}>
+            <label className={`textbox-label ${isValid}`}>
                 <span className="label">{this.props.label}</span>
                 <input type="text" 
                     value={this.props.value} 
