@@ -1,8 +1,8 @@
 export default function isMin (min, value) {
     let result;
-    if (typeof value === 'string') {
+    if (isNaN(parseFloat(value))) {
         result = value.length >= min;
-    } else if (typeof value === 'number') {
+    } else {
         result = value >= min;
     }
     return result;

@@ -6,18 +6,18 @@
             "type": "Dropdown",
             "label": "Title:",
             "value": "",
-            "options": [
+            "items": [
                 {
-                    "key": "1",
-                    "value": "Option 1"
+                    "id": "1",
+                    "text": "Option 1"
                 },
                 {
-                    "key": "2",
-                    "value": "Option 2"
+                    "id": "2",
+                    "text": "Option 2"
                 },
                 {
-                    "key": "3",
-                    "value": "Option 3"
+                    "id": "3",
+                    "text": "Option 3"
                 }
             ],
             "validation": {
@@ -45,13 +45,23 @@
             "id": "NumberTest",
             "type": "Number",
             "label": "Age:",
-            "value": ""
+            "value": "",
+            "validation": {
+                "required": true,
+                "min": 3,
+                "max": 10
+            }
         },
         {
             "id": "DatePickerTest",
             "type": "DatePicker",
             "label": "Date of birth:",
-            "value": "1985-06-08"
+            "value": "1985-06-08",
+            "validation": {
+                "required": true,
+                "minDate": "1985-05-01",
+                "maxDate": "1985-07-01"
+            }
         },
         {
             "id": "CheckboxListTest",

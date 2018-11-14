@@ -11,8 +11,9 @@ class Number extends Component {
     }
 
     render () {
+        const isValid = this.props.isValid ? 'valid' : 'invalid';
         return (
-            <label className="number-label">
+            <label className={`number-label ${isValid}`}>
                 <span className="label">{this.props.label}</span>
                 <input type="number" 
                     value={this.props.value} 

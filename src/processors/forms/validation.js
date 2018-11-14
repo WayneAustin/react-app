@@ -18,6 +18,12 @@ export default function FormValidationProcessor (state, field, value) {
             case "max":
             return Validation.methods.isMax(req, value);
 
+            case "minDate":
+            return Validation.methods.isMinDate(req, value);
+
+            case "maxDate":
+            return Validation.methods.isMaxDate(req, value);
+
             default:
             return false;
         }

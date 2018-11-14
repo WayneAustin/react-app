@@ -17,9 +17,13 @@ class Dropdown extends Component {
                 <span className="label">{this.props.label}</span>
                 <select value={this.props.value} 
                     onChange={this.handleChange}>
-                    <option value="Option1">Option 1</option>
-                    <option value="Option2">Option 2</option>
-                    <option value="Option3">Option 3</option>
+                    <option value=''>Please select</option>
+                    {this.props.items.map((item) => 
+                        <option value={item.id}
+                            key={item.id}>
+                            {item.text}    
+                        </option>
+                    )}
                 </select>
             </label>
         )

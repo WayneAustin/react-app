@@ -19,8 +19,9 @@ class Form extends Component {
     output = {};
 
     updateForm (field, value, parent) {
-        // #TODO: refactor this in to external processor
+
         this.setState((state) => {
+            state.edited = true;
             state = FormStateProcessor(this.state, field, value, parent);
             state = FormValidationProcessor(this.state, field, value);
             return state;
@@ -28,8 +29,9 @@ class Form extends Component {
     }
 
     render () {
+        const edited = this.state.edited ? 'edited' : 'fresh';
         return (
-            <form>
+            <form className={`${edited}`}>
                 {this.state.form.fields.map(comp => {
                     let Input = this.inputs[comp.type];
                     return <Input id={comp.id} 

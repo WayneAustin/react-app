@@ -11,8 +11,9 @@ class DatePicker extends Component {
     }
 
     render () {
+        const isValid = this.props.isValid ? 'valid' : 'invalid';
         return (
-            <label className="datepicker-label">
+            <label className={`datepicker-label ${isValid}`}>
                 <span className="label">{this.props.label}</span>
                 <input type="date" 
                     value={this.props.value} 

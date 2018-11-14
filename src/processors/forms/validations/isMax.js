@@ -1,8 +1,8 @@
 export default function isMax (max, value) {
     let result;
-    if (typeof value === 'string') {
+    if (isNaN(parseFloat(value))) {
         result = value.length <= max;
-    } else if (typeof value === 'number') {
+    } else {
         result = value <= max;
     }
     return result;
